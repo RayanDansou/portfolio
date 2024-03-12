@@ -1,0 +1,80 @@
+Entities:
+
+User: represents a user of the network, who can be a person, a group, a concert organizer, or a concert hall.
+Concert: represents a concert that can be announced by a user, and attended by other users.
+Genre: represents a musical genre, which can have sub-genres.
+Playlist: represents a playlist of songs, which can be created by a user.
+Relationships:
+
+Follows: represents the relationship between two users, where one user can follow another user.
+Attends: represents the relationship between a user and a concert, where a user can attend a concert.
+Interested in: represents the relationship between a user and a concert, where a user can express their interest in attending a concert.
+Participates in: represents the relationship between a user and a concert, where a user can participate in a concert.
+Organizes: represents the relationship between a user and a concert, where a user can organize a concert.
+Plays in: represents the relationship between a group and a concert, where a group can play in a concert.
+Tagged with: represents the relationship between an entity and a tag, where an entity can be tagged with one or more tags.
+Has: represents the relationship between a user and a playlist, where a user can have one or more playlists.
+Contains: represents the relationship between a playlist and a song, where a playlist can contain one or more songs.
+Attributes:
+
+User:
+id (primary key)
+name
+type: represents the type of user (person, group, concert organizer, concert hall).
+Concert:
+id (primary key)
+name
+date
+time
+location
+price
+organizer
+line-up
+capacity
+volunteers_needed
+cause
+outdoor_space
+children_friendly
+archived: represents whether the concert has already taken place and has been archived.
+Genre:
+id (primary key)
+name
+parent_id: represents the parent genre for sub-genres.
+Tag:
+id (primary key)
+name
+Song:
+id (primary key)
+title
+artist
+duration
+album
+release_year
+rating: represents the average rating of the song assigned by users.
+Playlist:
+id (primary key)
+name
+Follows:
+follower_id (foreign key referencing User.id)
+following_id (foreign key referencing User.id)
+Attends:
+user_id (foreign key referencing User.id)
+concert_id (foreign key referencing Concert.id)
+Interested in:
+user_id (foreign key referencing User.id)
+concert_id (foreign key referencing Concert.id)
+Participates in:
+user_id (foreign key referencing User.id)
+concert_id (foreign key referencing Concert.id)
+Organizes:
+user_id (foreign key referencing User.id)
+concert_id (foreign key referencing Concert.id)
+Plays in:
+group_id (foreign key referencing User.id)
+concert_id (foreign key referencing Concert.id)
+Tagged with:
+entity_id: represents the id of the entity that is tagged (foreign key referencing User.id or Concert.id)
+tag_id (foreign key referencing Tag.id)
+Has:
+user_id (foreign key referencing User.id)
+playlist_id (foreign key referencing Playlist

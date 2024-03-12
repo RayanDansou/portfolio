@@ -1,0 +1,154 @@
+Le modèle conceptuel de données (MCD) de la base de données pour NoiseBook peut être représenté comme suit:
+
+Entités:
+
+User (id_user, name, email, password, city, birthdate, avatar, creation_date, last_login)
+Group (id_group, name, description, avatar, creation_date)
+Association (id_association, name, description, avatar, creation_date)
+Venue (id_venue, name, address, city, zipcode, phone, website, email, avatar, capacity)
+Concert (id_concert, date, time, price, description, line_up, id_venue, id_user, id_association, need_volunteers, supporting_cause, outdoor_space, children_allowed, is_archived)
+Playlist (id_playlist, name, description, id_user, id_group)
+Song (id_song, title, artist, album, year, duration, genre)
+Genre (id_genre, name)
+Subgenre (id_subgenre, name, id_genre)
+Tag (id_tag, name, tag_type)
+Comment (id_comment, content, id_user, id_concert, id_song, id_group, id_venue)
+Rating (id_rating, value, id_user, id_song, id_playlist, id_concert)
+Associations:
+
+Follows (id_user, id_followed_user)
+Interested (id_user, id_concert)
+Participates (id_user, id_concert)
+Tagged (id_tag, id_concert, id_genre, id_subgenre, id_song, id_group, id_venue, id_comment, id_playlist)
+Contraintes d'intégrité:
+
+User.id_user, Group.id_group, Association.id_association, Venue.id_venue, Concert.id_concert, Playlist.id_playlist, Song.id_song, Genre.id_genre, Subgenre.id_subgenre, Tag.id_tag, Comment.id_comment, Rating.id_rating sont des clés primaires
+Follows.id_user et Follows.id_followed_user sont des clés étrangères référençant User.id_user
+Interested.id_user est une clé étrangère référençant User.id_user, et Interested.id_concert est une clé étrangère référençant Concert.id_concert
+Participates.id_user est une clé étrangère référençant User.id_user, et Participates.id_concert est une clé étrangère référençant Concert.id_concert
+Playlist.id_user est une clé étrangère référençant User.id_user, et Playlist.id_group est une clé étrangère référençant Group.id_group
+Song.genre est une clé étrangère référençant Genre.id_genre, et Subgenre.id_genre est une clé étrangère référençant Genre.id_genre
+Tag.tag_type peut être 'concert', 'genre', 'subgenre', 'song', 'group', 'venue', 'comment', ou 'playlist'
+Comment.id_user est une clé étrangère référençant User.id_user, et Comment.id_concert, Comment.id_song, Comment.id_group, et Comment.id_venue sont des clés étrangères référençant leur entité respective
+Rating.id_user est une clé étrangère référençant User.id_user, et Rating.id_song, Rating.id_playlist, et Rating.id_concert sont des clés étrangères référençant leur entité respective
+
+
+
+
+UTILISATEUR
+- id_utilisateur (PK)
+- nom
+- prénom
+- date_naissance
+- email
+- mot_de_passe
+- photo_de_profil
+- description
+
+PERSONNE
+- id_personne (PK)
+- id_utilisateur (FK)
+- ville
+- pays
+
+GROUPE
+- id_groupe (PK)
+- id_utilisateur (FK)
+- nom
+- ville
+- pays
+- photo_de_profil
+- description
+
+ASSOCIATION
+- id_association (PK)
+- id_utilisateur (FK)
+- nom
+- ville
+- pays
+- photo_de_profil
+- description
+
+SALLE_DE_CONCERT
+- id_salle (PK)
+- id_utilisateur (FK)
+- nom
+- adresse
+- ville
+- pays
+- photo_de_profil
+- description
+
+EVENEMENT
+- id_evenement (PK)
+- id_utilisateur (FK)
+- nom
+- date
+- heure
+- lieu
+- prix
+- organisateurs
+- line_up
+- nombre_de_places
+- besoin_de_volontaires
+- cause_en_soutien
+- espace_exterieur
+- enfants_permis
+
+PARTICIPATION
+- id_participation (PK)
+- id_utilisateur (FK)
+- id_evenement (FK)
+- interet
+- presence
+
+AVIS
+- id_avis (PK)
+- id_utilisateur (FK)
+- id_groupe (FK)
+- id_morceau (FK)
+- id_concert (FK)
+- note
+- commentaire
+
+MOT_CLEF
+- id_mot_clef (PK)
+- nom
+
+TAG
+- id_tag (PK)
+- id_evenement (FK)
+- id_groupe (FK)
+- id_salle (FK)
+- id_concert (FK)
+- id_avis (FK)
+- id_mot_clef (FK)
+
+PLAYLIST
+- id_playlist (PK)
+- id_utilisateur (FK)
+- nom
+- description
+
+MORCEAU
+- id_morceau (PK)
+- titre
+- artiste
+- duree
+- album
+- annee
+
+CONTIENT
+- id_contient (PK)
+- id_morceau (FK)
+- id_playlist (FK)
+- note
+
+AMI
+- id_utilisateur1 (PK, FK)
+- id_utilisateur2 (PK, FK)
+
+FOLLOW
+- id_follower (PK, FK)
+- id_followed (FK)
+

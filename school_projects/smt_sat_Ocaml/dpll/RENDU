@@ -1,0 +1,87 @@
+                      Mini-projet 1 : solveur DPLL récursif
+                             fichier RENDU
+                       (à remplir obligatoirement)
+
+**Un mini-projet sans fichier RENDU rempli ne recevra pas de note.**
+
+Date limite: 28 octobre 2022, 23h59
+
+Identité
+--------
+Nombre de binôme: 81
+Nom, prénom 1: Dansou Yao Rayan
+Nom, prénom 2: Hamache Doryan
+
+
+Questions sur votre code
+------------------------
+0. Avez-vous testé que `make dpll` s'exécute sans erreurs ou warnings,
+   et que ensuite `./dpll sudoku-4x4.cnf` donne la réponse attendue (voir
+   fichier README) ?
+
+**à remplir**
+
+---
+
+1. Avez-vous utilisé la fonction `filter_map` (donné dans dpll.ml)
+   dans votre implémentation de `simplifie` ? 
+   - Si oui, expliquez en quelques phrases en français comment vous
+     l'avez utilisée.
+   - Si non, expliquez en quelques phrases en français comment
+     fonctionne votre implémentation de `simplifie`.
+
+	Notre fonction parcourt chaque clause en retirant le contraire du litteral (non l) mis a faux
+	et retire les clauses contenant la litteral a simplifier 
+	
+---
+
+2. Pour l'implémentation de `unitaire`, quelles sont les fonctions
+   auxiliaires que vous avez utilisées et/ou écrites ? (Par une
+   fonction auxiliaire, on entend ici soit une fonction d'une
+   bibliothèque, par exemple des fonctions comme `List.length`,
+   `List.rev_append`, ou une fonction `aux_unitaire` que vous avez
+   écrite vous-mêmes.) Expliquez en quelques phrases en français
+   comment ces fonctions auxiliaires sont utilisées dans votre
+   implémentation de la fonction `unitaire`.
+
+	dans notre implementation nous avons utilisé List.length qui renvoie la longueur d'une liste
+	(dans ce contexte d'une clause) et la fonction renvoie la première clause de longueur 1(unitaire)
+
+---
+
+3. Pour l'implémentation de `pur`, quelles sont les fonctions
+   auxiliaires que vous avez utilisées et/ou écrites ?  Expliquez en
+   quelques phrases en français comment ces fonctions auxiliaires sont
+   utilisées dans votre implémentation de la fonction `pur`.
+
+	-list_of_props clauses: cette fonction prends une liste de listes et la renvoie dans une seule et unique liste 
+	(qui nous servira pour le parcours plus facile des clauses)
+	
+	-rech l x: cette fonction verifie si le litteral x est pur dans la liste l. Si il ne l'est pas (il y a son opposé (non x))
+	on renvoie 0
+	
+	- recherche_pur l s: cette fonction prend une liste(ici la liste produite par list_of_props) et un entier (0 pour commencer au 		debut) et verifie si l'element a la position s dans la liste est unitaire. Si oui on le renvoie, Sinon on continue jusqu'a la fin du tableau et on renvoie une erreur si on a rien trouvé.
+	
+	
+	- Pur clauses : Cette fonction prend une liste de listes et appelle la recherche_pur avec 0 
+
+---
+
+4. Donnez un exemple d'une formule pour laquelle les deux fonctions
+   `solveur_split` et `solveur_dpll_rec` ont un comportement
+   différent, et expliquez les différences entre ces deux fonctions.
+
+ les 2 fonctions se compertant differement pour :[[1;-1;-3];[2;3];[2]]
+ avec le solveur_split on a SAT 1 2 0
+ mais avec le solveur_dpll_rec on a SAT 2 -3 0
+ 	On observe cette différence du fait de la presence d'une clause unitaire qui n'est alors pas prise en compte dans le split qui ne verifie pas ce cas alors que le solveur_dpll_rec verfie ce cas special avant de split
+
+---
+
+5. Avez-vous d'autres remarques sur votre rendu ? (question optionnelle)
+
+**à remplir**
+
+---
+
+--fin du fichier RENDU--

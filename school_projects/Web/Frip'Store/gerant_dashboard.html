@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord du gérant - Frip'Store</title>
+    <link rel="stylesheet" href="css/gerant_dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="gerant_dashboard.js"></script>
+</head>
+<body>
+    <h1>Tableau de bord du gérant</h1>
+    <div>
+        <h2>Ajouter / Mettre à jour le stock</h2>
+        <button id="get-article-info">Afficher les informations de l'article</button>
+        <p id="article-info"></p>
+        <form id="update-stock-form">
+            <label for="article_id">ID de l'article:</label>
+            <input type="number" id="article_id" name="article_id" required>
+            <br>
+            <label for="stock_change">Quantité à ajouter ou soustraire:</label>
+            <input type="number" id="stock_change" name="stock_change" required>
+            <br>
+            <input type="submit" value="Mettre à jour le stock">
+        </form>
+    </div>
+    <div>
+        <h2>Supprimer une commande</h2>
+        <div>
+        <h2>Liste des commandes</h2>
+        <button id="load-orders">Charger les commandes</button>
+        <table id="orders-table">
+            <thead>
+            <tr>
+                <th>ID de la commande</th>
+                <th>Date et heure de la livraison</th>
+                <th>Statut de la commande</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+</html>

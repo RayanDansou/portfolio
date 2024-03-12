@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande-Frip'Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.
+min.css">
+    <link rel="stylesheet" href="css/commande.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+    
+    <!-- header -->
+    <header class="header">
+        <a href="main.html" class="logo"> <i class="fas fa-bag-shopping"></i> Frip'Store </a>
+        <nav class="navbar">
+            <a href="main.html">Accueil</a>
+            <a href="Panier.html">Retour</a>
+        </nav>
+    </header>
+
+    <!-- formulaire de commande -->
+    <section class="formulaire">
+    <div>
+        <form id="order-form">
+            <label id="titre" class="TitleForm">Formulaire de commande</label><br>
+        
+            <label for="Nom" class="LabelForm">Nom</label>
+            <input type="text" name="Nom" placeholder="Dupont" class="InputForm" required aria-label="Veuillez entrer votre nom" title="Veuillez remplir ce champ"><br>
+        
+            <label for="Prénom" class="LabelForm">Prénom</label>
+            <input type="text" name="Prénom" placeholder="laurent" class="InputForm" required aria-label="Veuillez entrer votre prenom" title="Veuillez remplir ce champ"><br>
+        
+            <label for="Adresse" class="LabelForm">Adresse</label>
+            <input type="text" name="Adresse" placeholder="7 rue de Jesus" class="InputForm" required aria-label="Veuillez entrer votre Adresse" title="Veuillez remplir ce champ"><br>
+        
+            <label for="Téléphone" class="LabelForm">Téléphone</label>
+            <input type="text" name="Téléphone" placeholder="(06/07)XXXXXXXX" class="InputForm" pattern="[0-9]{10}" required aria-label="Veuillez entrer votre téléphone" title="Veuillez remplir ce champ"><br>
+        
+            <label for="Adresse_email" class="LabelForm">Adresse email</label>
+            <input type="text" name="Adresse_email" id="email" placeholder="laurentdupont@example.com" class="InputForm" required  aria-label="Veuillez entrer votre mail" title="Veuillez remplir ce champ"><br>                        
+        
+            <input type="reset" name="Réinitialiser" value="Réinitialiser" class="btn">
+        
+            <input type="submit" name="Envoyer" value="Envoyer" class="btn">
+        </form>        
+    </div>    
+    </section>
+    
+    <!-- footer -->
+    <section class="footer">
+        <div class="credit">copyright &copy; 2023 <span> Frip'Store </span> | Tous droits réservés </div>
+    </section>    
+    <script src="commande.js"></script>
+</body>
+</html>

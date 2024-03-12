@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier-Frip'Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.
+min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="css/panier.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+</head>
+<body>
+    
+    <!-- header -->
+    <header class="header">
+        <a href="main.html" class="logo"> <i class="fas fa-bag-shopping"></i> Frip'Store </a>
+        <nav class="navbar">
+            <a href="main.html">Accueil</a>
+        </nav>
+    </header>
+
+     <!-- panier -->
+    <section class="panier">
+        <ul id="panier-list">
+        <!--pour afficher les éléments ajoutés au panier ici -->
+        </ul>
+    </section>
+    <section class="panier-total" id="panier-total">
+    </section>
+
+    <!-- Commander les éléments du panier -->
+    <form id="checkout-form">
+        <section class="commande">
+            <a href="commande.html" class="btn" id="commanderbtn" disabled>Commander</a>
+        </section>
+    </form>
+    <!-- footer -->
+    <section class="footer">
+        <div class="credit">copyright &copy; 2023 <span> Frip'Store </span> | Tous droits réservés </div>
+    </section>    
+    <script src="panier.js"></script>
+</body>
+</html>
