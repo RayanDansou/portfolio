@@ -1,21 +1,22 @@
 Auteur: Rayan DANSOU
+------
 
 
 
 
 Ceci est un projet visant à créer une API à partir de 0
-----
+
 Welcome to my project which is to create an API from scratch
 
 
 
 Cette API REST utilise le framework django 
-----
+
 This REST API uses the Django Framework 
 
 
 CONCEPT
-
+----
 
 Cette API est une API de gestion de contenu, avec des fonctionnalités pour la création, la mise à jour, la récupération et la suppression (CRUD) de plusieurs types d'objets, notamment des  des livres, des émotions relatives à ces livreset des critiques (reviews).
 
@@ -52,6 +53,7 @@ In summary, this API provides a comprehensive set of CRUD operations for managin
 
 
 COMMENT LANCER LE PROJET | HOW TO USE:
+-----
 
 pour lancer ce projet, exécuter le fichier run.bat en lancant la commande
 
