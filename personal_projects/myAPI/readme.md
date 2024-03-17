@@ -4,15 +4,11 @@ Auteur: Rayan DANSOU
 
 
 
-Ceci est un projet visant à créer une API à partir de 0
-
-Welcome to my project which is to create an API from scratch
+Ceci est un projet visant à créer une API à partir de 0 | Welcome to my project which is to create an API from scratch
 
 
 
-Cette API REST utilise le framework django 
-
-This REST API uses the Django Framework 
+Cette API REST utilise le framework django | This REST API uses the Django Framework 
 
 
 CONCEPT
@@ -59,16 +55,20 @@ pour lancer ce projet, exécuter le fichier run.bat en lancant la commande
 
     ./run.bat
 
-    Vous pouvez ensuite vous rendre à l'adresse suivante pour vos tests:  http://127.0.0.1:8000/
+Vous pouvez ensuite vous rendre à l'adresse suivante pour vos tests:  
+        
+        http://127.0.0.1:8000/
 
 
 --------------------------------------
 
-    To launch this project, execute the run.bat file by running the command:
+To launch this project, execute the run.bat file by running the command:
 
     ./run.bat
 
-    After that, you can go to the following address for testing: http://127.0.0.1:8000/
+After that, you can go to the following address for testing: 
+    
+    http://127.0.0.1:8000/
 
 
 
