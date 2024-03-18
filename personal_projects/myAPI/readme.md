@@ -57,7 +57,7 @@ pour lancer ce projet, exécuter le fichier run.bat en lancant la commande
 
 Vous pouvez ensuite vous rendre à l'adresse suivante pour vos tests:  
         
-        http://127.0.0.1:8000/
+    http://127.0.0.1:8000/
 
 
 --------------------------------------
